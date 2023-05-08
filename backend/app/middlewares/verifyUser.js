@@ -1,8 +1,9 @@
 const sql = require("../models/db");
 
 checkDuplicateEmail = (req, res, next) => {
-    const username = req.body.user_username;
-    const email = req.body.user_email;
+    const username = req.body.username;
+    const email = req.body.email;
+
     let conditionUsername = '';
     let conditionEmail = '';
 

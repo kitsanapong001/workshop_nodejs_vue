@@ -16,5 +16,5 @@ CREATE TABLE IF NOT EXISTS `products` (
   product_name varchar(255) NOT NULL,
   product_quanlity int(11),
 	product_detail varchar(255),
-	product_image varchar(255)
+	product_status int(11)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

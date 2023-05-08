@@ -11,15 +11,8 @@ app.get('/', (req, res) => {
   res.send('Hello World')
 })
 
-app.use(
-  "/getImage",
-  express.static(__dirname + "/app/assets/images")
-);
-
 require("./app/routes/auth.routes")(app);
-
 require("./app/routes/products.routes")(app);
-// require("./app/routes/users.routes")(app);
 
 const PORT = process.env.PORT || 8092;
 app.listen(PORT, () => {

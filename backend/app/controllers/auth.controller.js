@@ -16,7 +16,7 @@ exports.signup = async (req, res) => {
     user_email : req.body.user_email,
     user_firstname : req.body.user_firstname,
     user_lastname : req.body.user_lastname,
-    role_id : req.body.role_id
+    role_id : 1
   }
 
   sql.query("INSERT INTO users SET ?", dataUsers, (err, result) => {
@@ -32,9 +32,6 @@ exports.signup = async (req, res) => {
 exports.signin = async (req, res) => {
   var user_username = req.body.user_username;
   var user_password = req.body.user_password;
-
-  console.log(user_username);
-  console.log(user_password);
 
   sql.query(`SELECT * FROM users a LEFT JOIN roles b ON a.role_id = b.role_id WHERE user_username = '${user_username}'`, (err, result) => {
     if (err) {

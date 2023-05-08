@@ -1,3 +1,3 @@
 module.exports = {
-  secret: "w@rkshop-etsysdfsd",
+  secret: "w@rkshop-NOde_Vue!s",
 };

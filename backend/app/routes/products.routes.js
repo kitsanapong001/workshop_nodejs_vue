@@ -1,6 +1,6 @@
 
 const authJwt = require("../middlewares/authJwt");
-const controller = require("../controllers/Products.controller");
+const controller = require("../controllers/products.controller");
 
 module.exports = function (app) {
     // set header
@@ -18,7 +18,7 @@ module.exports = function (app) {
     //create Product
   app.post("/api/products/createProduct", [authJwt.verifyToken],controller.createProduct);
     //delete Product
-  app.delete("/api/products/deleteProduct", [authJwt.verifyToken],controller.deleteProduct);
+  app.post("/api/products/deleteProduct", [authJwt.verifyToken],controller.deleteProduct);
     //edit Product
-  app.put("/api/products/editProduct", [authJwt.verifyToken],controller.editProduct);
+  app.post("/api/products/editProduct", [authJwt.verifyToken],controller.editProduct);
 }
